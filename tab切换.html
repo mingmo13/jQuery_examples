@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>tab切换</title>
+<style type="text/css">
+a{
+	display: inline-block;
+	padding: 10px;
+	margin-right: 10px;
+	background: #fc9;
+	text-decoration: none;
+	margin-bottom: 10px;
+}
+.a{
+	/*当前*/
+	background: #3ff;
+	font-weight: bold;
+}
+#conn div{
+	width: 200px;
+	height: 100px;
+	background: #f22;
+	display: none;
+}
+</style>
+<script type="text/javascript" src="jquery-1.11.3.js"></script>
+<script type="text/javascript">
+$(function(){
+	$('#p1 a').each(function(index){
+		$(this).mouseover(function(){
+			$('#p1 a').removeClass('a');
+			$(this).addClass('a');
+			$('#conn>div').css('display','none');
+			$('#conn>div:eq('+index+')').css('display','block')
+		})
+	})
+})
+</script>
+</head>
+
+<body>
+<p id="p1">
+	<a class="a" href="#">1</a>
+    <a href="#">2</a>
+    <a href="#">3</a>
+</p>
+<div id="conn">
+	<div style="display:block">11111111111</div>
+    <div>22222222222</div>
+    <div>33333333333333</div>
+</div>
+</body>
+</html>

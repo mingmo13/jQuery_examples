@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>隔行变色</title>
+<script type="text/javascript" src="jquery-1.11.3.js"></script>
+<script type="text/javascript">
+
+$(function(){
+	$('#ul1>li:even').css('background','red');
+	$('#ul1>li:odd').css('background','yellow');
+	
+	$('#ul1>li').mouseover(function(){
+		$(this).css('background','gray');
+		$(this).css('color','#fff');
+	});
+	$('#ul1>li').mouseout(function(){
+		$('#ul1>li:even').css('background','red');
+		$('#ul1>li:odd').css('background','yellow');
+		$('#ul1>li').css('color',"#000");
+	})
+})
+
+</script>
+</head>
+
+<body>
+<ul id="ul1">
+	<li>11111111111</li>
+    <li>22222222222</li>
+    <li>33333333333</li>
+    <li>11111111111</li>
+    <li>11111111111</li>
+    <li>11111111111</li>
+</ul>
+</body>
+</html>
